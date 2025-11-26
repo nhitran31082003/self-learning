@@ -1,0 +1,822 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+/* :root {
+    --primary-color: #000746;
+    --secondary-color: #0038ba;
+    --text-color: #000ed5;
+    --nav--color: white;
+    --main-color: #000000;
+} */
+
+html {
+    font-size: 65%; /* Base font size */
+    overflow-x: hidden; /* Prevents scrolling */
+}
+body {
+    background: var(--bg--color, #000000); /* Default background color */
+    width: 100%;
+    height: 100vh;
+    color: var(--text-color, #ffffff); /* Default text color */
+}
+
+.App-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12% 4rem;
+    background-color: #1d1d1d;
+    backdrop-filter: blur(10px);
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    font-size: 3rem;
+    color:var(--text-color); /* text color*/
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+.logo span {
+    font-family: 'Dancing Script', cursive; /* font family */
+    font-size: 5.5rem; /* font size */
+    color: blue; /* color of K */
+    text-shadow: 0 0 25px rgb(255, 255, 255),0 0 10 blue; /* shadow color */
+}
+
+.App-nav a{
+    font-size: 1.8rem;
+    color: var(--nav--color);/*navcolor*/
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.App-nav a:hover,
+.App-nav a.active {
+    color: rgb(2, 2, 192);  /* color of link when hover */
+    border-bottom: 3px solid rgb(2, 2, 192); /* border color when hover */
+}
+
+#menu-icon {
+    font-size: 3.5rem;
+    color: rgb(55, 55, 255);/* icon color */
+    display: none;
+}
+section{
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+    font-style: normal;
+}
+span {
+    color: Blue;
+}
+
+.home-content h3{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: inline;
+    vertical-align: middle;
+    line-height: 1.2;
+}
+.home-content h1 {
+    font-family: 'dancing script', cursive;
+    font-weight: bold;
+    font-size: 7rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+}
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #3f5cff, 0 0 50px #1a237e, 0 0 80px #000746;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.home-img img:hover {
+   box-shadow: 0 0 40px #3f5cff, 0 0 80px #1a237e, 0 0 120px #000746;
+}
+.home-content p {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 1000px;
+}
+.socials-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    gap : 2rem;
+    margin: 3rem;
+    transition: 0.3s ease;
+}
+.socials-icons a {
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: transparent;
+    border: 2px solid rgb(2, 2, 192);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    margin: 0;
+}
+.socials-icons a:hover{
+    color: white;
+    transform: scale(1.3) translateY(-5px);
+    box-shadow: 0 0 25px blue;
+    background-color:blue ;
+}
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: #0034d0;
+    box-shadow: 0 0 25px #3f5cff;
+    border-radius: 4rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+    border: 2px solid #ffffff; /* border color */
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: black;
+    transform: scale(1.03);
+    border: 2px solid #00eaff; /* border color */
+    box-shadow: 0 0 25px #3700ff, 0 0 40px #00eaff;
+}
+.btn-group {
+    display: flex;
+    gap: 2.5rem;         /* Khoảng cách giữa hai nút */
+    margin-top: 2rem;  /* Khoảng cách phía trên */
+    justify-content: flex-start; /* Căn chỉnh các nút về bên trái */
+    align-items: center;
+}
+.btn-group a:nth-of-type(2) {
+    background-color: #000000;/* button color */
+    color: #ffffff; /* text color */
+    border: 2px solid #00eaff; /* border color */
+    box-shadow: 0 0 25px transparent; /* shadow color */
+}
+.btn-group a:nth-of-type(2):hover {
+    background-color: #0034d0;
+    color: #fff;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 25px #3700ff, 0 0 40px #00eaff;
+}
+.text-animation {
+    font-size: 3.4rem;
+    font-weight: 600;
+    min-width: 200px;
+    line-height: 1.2;
+    display: inline;
+    vertical-align: middle;
+}
+.text-animation span{
+    position: relative;
+    color: #ffffff;
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #ffffff;/*Màucontrỏcùngmàuchữ*/
+    animation: typing 2.5s steps(20, end) infinite, blink-caret 0.7s step-end infinite;
+    vertical-align: middle;
+    line-height: 1.2;
+    padding-left: 0.2rem;
+}
+.text-animation span::before {
+    content: "";
+    color: rgb(253, 253, 253);
+    animation: words 20s infinite;
+
+}
+.text-animation span::after {
+    content: "";
+    color: blue;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+}
+@keyframes cursor{
+    to{
+        border-left: 1.5px solid blue;
+    }
+}
+@keyframes typing {
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 100%;
+    }
+    100%{
+        width: 0;
+    }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #ffffff; } /*màu của con trỏ */
+}
+
+/*section {
+    border: 3px double #000ed5;
+    border-radius: 2rem;
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 16px #bfa76f22;
+}*/
+.heading {
+    font-size: 8rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+.education{
+    padding: 100px 15px;
+    background: #000000;
+}
+.education h2{
+    color: blue;
+    margin-bottom: 5rem;
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+}
+.timeline-items {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.timeline-items::before{
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: #ffffff; /* color of timeline */
+    box-shadow: #3700ff;
+    left: calc(50% - 1px);
+}
+.timeline-item{
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+.timeline-item:last-child{
+    margin-bottom: 0;
+}
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+}
+.timeline-dot{
+    height: 21px;
+    width: 21px;
+    background-color: #2836b4;/*colorofdot*/
+    box-shadow: 0 0 40px #8291e9, 0 0 50px #3844cc, 0 0 80px #6774e9;
+    position: absolute;
+    left: calc(50% - 9.3px);
+    border-radius: 50%;
+    top: 10px;
+}
+.timeline-date {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff; /* color of date */
+    margin: 6px 0 15px;
+}
+.timeline-content{
+    background-color: black;
+    border: 3px solid rgb(75, 75, 252);/*bordercolor*/
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px rgb(75, 75, 252), 0 0 20px rgb(41, 41, 247), 0 0 30px rgb(0, 0, 255);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.timeline-content:hover {
+    box-shadow: 0 0 20px rgb(75, 75, 252), 0 0 40px rgb(41, 41, 247), 0 0 60px rgb(0, 0, 255);
+    transform: translateY(1.05);
+}
+.timeline-content h3 {
+    font-size: 20px;
+    color: #ffffff; /* color of title */
+    margin: 10px;
+    font-weight: 500;
+}
+.timeline-content p {
+    font-size: 16px;
+    color: #ffffff; /* color of description */
+    font-weight: 300;
+    line-height: 22px;
+    text-align: justify;
+}
+::-webkit-scrollbar {
+    width: 15px;
+}
+/* Thanh kéo (thumb) */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #3700ff, #82e4b8, #00eaff);
+    border-radius: 12px;
+    border: 2px solid #222;
+    box-shadow: 0 0 10px #3700ff, 0 0 20px #00eaff;
+    transition: background 0.3s;
+}
+
+/* Hiệu ứng hover cho thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #00eaff, #3700ff, #82e4b8);
+    box-shadow: 0 0 20px #00eaff, 0 0 40px #3700ff;
+}
+
+/* Track (phần nền của scrollbar) */
+::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 12px;
+    box-shadow: inset 0 0 5px #3700ff;
+}
+.skills{
+    background: #000000;
+    color: #ffffff;
+}
+.skills h2 {
+    margin-bottom: 5rem;
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+    color: blue;
+}
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap: 3rem;
+}
+.skills-box{
+    background-color: #000ed5;
+    height: 300px;
+    border-radius: 3rem;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.skills-box:hover{
+    background: black;
+    color: white;
+    border: 2px solid #000ed5;
+    box-shadow: 0 0 10px #00eaff ,0 0 20px #0034d0, 0 0 40px #000ed5;
+    transform: scale(1.03);
+}
+.skills-box .skills-info{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
+    justify-content: left;
+    align-items: baseline;
+    padding: 5rem 5rem;
+}
+.skills-info h4{
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 2;
+}
+.skills-info p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-height: 100px;
+    line-height: 1.7;
+}
+.projects{
+    background: Black;
+}
+.project-box{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.projects .heading{
+    margin-bottom: 5rem;
+    font-family: 'dancing script', cursive;
+    font-style: italic;
+    color: blue;
+}
+.project-box img {
+    width: 15rem;
+    border-radius: 15%;
+    border: 3px solid #0034d0;
+    box-shadow:0 0 25px #0034d0, 0 0 50px #000ed5, 0 0 80px #000746;/*shadowcolor*/
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap : 3rem;
+}
+.project-item{
+    min-height: 550px;
+    max-width: 450px;
+    background: #000000;
+    border: 3px solid #0034d0;
+    border-radius:2rem ;
+    margin: 0 2rem;
+    padding: 30px 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    color: rgb(255, 255, 255);
+    transition: 0.4s ease-in-out;
+}
+.project-item:hover {
+    background: #0034d0;
+    border: 3px solid #00eaff; /* border color */
+    box-shadow: 0 0 20px #0034d0, 0 0 40px #000ed5, 0 0 60px #000746;
+    transform: translateY(-10px) scale(1.03);
+}
+.project-item h2{
+    font-size: 2.8rem;
+    font-family: 'dancing script', cursive;
+}
+.project-item p {
+    font-size: 1.6rem;
+    text-align: left;
+}
+.description i{
+    color: #00eaff;
+    font-size: 2rem;
+}
+.contact{
+    background-color: #000000;
+}
+.contact h2 {
+    margin-bottom: 5rem;
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+    color: blue;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Đảm bảo xếp dọc */
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 5rem auto;
+    text-align: center;
+}
+.contact-form .input-group {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.contact-form .input-box,
+.contact-form .input-box-2 {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.contact-form .input-box input {
+    width: 100%;
+    margin-bottom: 1.2rem;
+}
+
+.contact-form .input-box-2 textarea {
+    width: 100%;
+    min-height: 200px;
+    resize: none;
+}
+.contact-form .btn {
+    margin-top: 2rem;
+    align-self: auto; /* Căn giữa nút */
+}
+/* Ẩn mũi tên tăng giảm trên Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Ẩn mũi tên trên Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.contact-form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.4rem;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 2rem;
+    border: 2px solid #000ed5; /* border color */
+    margin: 0.8rem;
+    resize: none;
+}
+.contact-form .input-box-2 textarea {
+    min-height: 200px;
+    max-height: 150px;
+    font-size: 1.8rem;
+    padding: 2.5rem;
+    border-radius: 1.2rem;
+}
+.contact form .btn{
+    margin-top: 4rem;
+    padding: 1.2rem 3rem;
+    gap: 2rem;
+}
+.contact-form .input-box input::placeholder {
+    color: #0034d0aa;
+    opacity: 1;
+}
+
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: #000000;
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color:blue;
+}
+.footer .social a {
+    color: blue;
+    font-size: 25px;
+    border: 2px solid blue;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+.footer .social a:hover {
+    transform: scale(1.2)translateY(-10px);
+    background-color: #000ed5;
+    color: #000000;
+    box-shadow: 0 0 25px #3f5cff, 0 0 50px #1a237e, 0 0 80px #000746;
+}
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+    display: flex;              /* Thêm dòng này */
+    justify-content: center;    /* Căn giữa các mục */
+    gap: 2rem;                  /* Khoảng cách giữa các mục */
+    list-style: none;           /* Ẩn dấu chấm đầu dòng */
+}
+.footer ul li a{
+    color: #ffffff;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+.footer ul li a:hover {
+    color: #0034d0;
+    border-bottom: 3px solid #000ed5;
+    display: inline-block;
+}
+.footer ul li {
+    text-align: center;
+    margin-top: 0px;
+    font-size: 16px;
+    color: white;
+}
+.footer .copyright {
+    text-align: center;
+    font-size: 2rem;      /* Cỡ chữ lớn hơn */
+    color: #ffffff;
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    background: #0034d0;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px #000ed588;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: background 0.3s;
+}
+#backToTop:hover {
+    background: #00eaff;
+    color: #0034d0;
+    opacity: 1;
+}
+
+@media (max-width: 1285px) {
+    html {
+        font-size: 55%;
+    }
+    .skills-container {
+        padding-bottom: 7rem;
+        grid-template-columns:repeat(2, 1fr);
+        margin: 0 5rem;
+    }
+}
+@media (max-width: 995px) {
+   header{
+    padding: 2rem 3%;
+   }
+   section{
+    padding: 10rem 3% 2rem;
+   }
+   .timeline-items::before {
+        left: 7px;
+    }
+    .timeline-item:nth-child(odd) {
+        padding-right: 0;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 37px;
+    }
+    .timeline-dot {
+        left: 0;
+    }
+    .skills{
+        padding-bottom: 7rem;
+    }
+    .projects .wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact form{
+        flex-direction: column; ;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+@media (Max-width : 895px){
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background-color: #1d1d1d;
+        backdrop-filter: blur(20px);
+        border-bottom-left-radius: 2rem ;
+        border-left: 2rem solid #000ed5;
+        border-bottom: #000ed5;
+        display: none;
+    }
+    .navbar.active {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: #ffffff;
+    }
+    .home{
+        flex-direction: column;
+        align-self: center;
+        gap: 2.6rem;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+    .home-content h1 {
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p{
+        color: #ffffff;
+        text-align: center;
+        gap: 2.6rem;
+        font-family: 'Dancing Script', cursive;
+        font-size: 2rem;
+    }
+    .home-img img {
+        width: 56vw;
+    }
+    .skills h2{
+        margin-bottom: 3rem;
+    }
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Ẩn menu trên mobile mặc định */
+@media (max-width: 768px) {
+    .menu-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .App-nav {
+        display: flex;
+        flex-direction: column;
+        background: #1d1d1d;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 45vw;
+        height: 40vh;
+        padding-top: 8rem;
+        transition: right 0.3s;
+        box-shadow: -4px 0 24px #000ed588, 0 0 10px #0112f9;
+        z-index: 999;
+        align-items: flex-start;
+        gap: 2.5rem;
+        border-radius: 2rem;
+    }
+    .App-nav.active {
+        display: flex;
+        right: 0;
+    }
+    .menu-wrapper:hover .App-nav,
+    .App-nav:hover {
+        right: 0;
+    }
+    #menu-icon{
+        display: block;
+        position: static;   
+        margin-left: 2rem;    
+        font-size: 2.5rem;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1100;
+    }
+}
+}
